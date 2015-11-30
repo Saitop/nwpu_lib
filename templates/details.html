@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>{{  book_name }}</h1>
+	{% if books %}
+	{% for book in books %}
+	<p> {{ book.place }} </p>
+	<p> {{ book.status }} </p>
+	{% endfor %}
+	{%endif%}
+	<a href="/search" role="button">返回</a>
+</body>
+</html>

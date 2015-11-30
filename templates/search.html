@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <form action="/result/" method="get">
+        <input type="text" name="book" placeholder="Book Name" value="{{ book_name }}">
+        <input type="submit" value="Search">
+    </form>
+    {% if result %}
+    <p>{{ message }}</p>
+    {% endif %}
+    {% if books %}
+    {% for book in books %}
+    <p>
+    <span> {{ book.title }} : </span>
+    <span> {{ book.description }}</span>
+    <a href="/result/{{ book.marc_no }}"> 查询馆藏 </a>
+    </p>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
